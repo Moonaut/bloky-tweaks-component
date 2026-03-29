@@ -8,8 +8,12 @@
 
 .nav-pills {
     background: var(--primary-50);
-    border-radius: var(--d-border-radius);
+    border-radius: var(--d-border-radius-large);
     padding: 4px;
+}
+
+.nav-pills>li {
+    border-radius: calc(var(--d-border-radius-large) - 4px);
 }
 
 .nav-pills>li.active {
