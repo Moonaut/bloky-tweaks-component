@@ -43,7 +43,7 @@
 .discourse-tag[data-tag-name="fixed"],
 .discourse-tag[data-tag-name="implemented"],
 .discourse-tag[data-tag-name="confirmed"] {
-  order: -2;
+  order: -1;
 }
 
 .discourse-tag[data-tag-name="wip"],
@@ -92,7 +92,7 @@
 }
 
 .inline-topic-title-link {
-	order: -1;
+	order: -2;
   font-size: var(--font-up-1);
 }
 
