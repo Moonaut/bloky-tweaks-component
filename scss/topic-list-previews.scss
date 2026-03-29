@@ -1,5 +1,5 @@
 .tlp-featured-topics.has-topics .topics {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     overflow-x: hidden !important;
 }
