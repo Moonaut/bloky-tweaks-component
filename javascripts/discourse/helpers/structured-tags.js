@@ -2,8 +2,33 @@ import { helper } from "@ember/component/helper";
 
 const MAX_VISIBLE = 3;
 
+function isVersionTag(name) {
+  if (!name) return false;
+
+  return (
+    /^(alpha|beta|rc)-\d+(?:-\d+)*$/.test(name) || // alpha-1-2-2 / beta-1-2-3 / rc-1-3-4
+    /^\d+(?:-\d+)+$/.test(name)                    // 1-2 / 1-3-5 / 1-0
+  );
+}
+
 function tagName(tag) {
   return typeof tag === "string" ? tag : tag?.name;
+}
+
+function decorateTag(tag) {
+  const name = tagName(tag);
+  const classes = [];
+
+  if (isVersionTag(name)) {
+    classes.push("milestone");
+  }
+
+  return {
+    original: tag,
+    name,
+    classes,
+    className: classes.join(" "),
+  };
 }
 
 export default helper(function structuredTags([tags]) {
@@ -20,15 +45,6 @@ export default helper(function structuredTags([tags]) {
 
     const exactIndex = priorityList.indexOf(name);
     return exactIndex !== -1 ? exactIndex : priorityList.length;
-  }
-
-  function decorateTag(tag) {
-    return {
-      original: tag,
-      name: tagName(tag),
-      classes: [],
-      className: "",
-    };
   }
 
   const sorted = [...tags].sort((a, b) => {
