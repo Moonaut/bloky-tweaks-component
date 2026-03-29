@@ -1,0 +1,9 @@
+.tlp-featured-topics.has-topics .topics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow-x: hidden !important;
+}
+
+.tlp-featured-topics.has-topics .topics .tlp-featured-topic .featured-details img.thumbnail {
+    border-radius: var(--d-border-radius);
+}
