@@ -1,0 +1,4 @@
+priority_tags:
+  default: "confirmed|needs-testing|fixed"
+  type: list
+  description: "List of tags to be prioritized, in order of importance."

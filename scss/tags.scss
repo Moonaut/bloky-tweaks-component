@@ -1,87 +1,96 @@
-/*
-.topic-list .discourse-tag[data-tag-name="status:confirmed"] {
-  background: var(--tag-color-danger);
-  font-size: 0;
-  width: 8px;
-  height: 8px;
-  min-width: 12px;
-  min-height: 12px;
-  aspect-ratio: 1;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  display: block;
-}
+:root {
+	--tag-color-warning: oklch(78% 0.14 84);
+	--tag-color-danger: oklch(62% 0.16 27);
+	--tag-color-success: oklch(66% 0.16 150);
+	--tag-color-milestone: oklch(62% 0.18 302);
 
-.topic-list .discourse-tag {
-  display: none;
+	--tag-bg-alpha: 18%;
+	--tag-border-alpha: 28%;
 }
-
-.topic-list .discourse-tag.simple {
-  display: block;
-}
-*/
 
 @media (prefers-color-scheme: dark) {
-  .discourse-tag[data-tag-name="status:confirmed"] {
-    background: color-mix(in srgb, var(--tag-color-danger) 20%, transparent);
-    border: solid 1px color-mix(in srgb, var(--tag-color-danger) 50%, transparent);
-    color: color-mix(in srgb, var(--tag-color-danger) 85%, white);
-    order: -1;
-  }
+	:root {
+		--tag-color-warning: oklch(78% 0.13 84);
+		--tag-color-danger: oklch(68% 0.14 27);
+		--tag-color-success: oklch(72% 0.15 150);
+		--tag-color-milestone: oklch(70% 0.17 302);
 
-  .discourse-tag[data-tag-name="status:fixed"],
-  .discourse-tag[data-tag-name="status:implemented"] {
-    background: color-mix(in srgb, var(--tag-color-success) 20%, transparent);
-    border: solid 1px color-mix(in srgb, var(--tag-color-success) 50%, transparent);
-    color: var(--tag-color-success);
-    order: -1;
-  }
-
-  .discourse-tag[data-tag-name="status:needs_testing"] {
-    background: color-mix(in srgb, var(--tag-color-warning) 20%, transparent);
-    border: solid 1px color-mix(in srgb, var(--tag-color-warning) 50%, transparent);
-    color: var(--tag-color-warning);
-    order: -1;
-  }
-
-  .discourse-tag[data-tag-name*="milestone:"] {
-    background: color-mix(in srgb, var(--tag-color-milestone) 20%, transparent);
-    border: solid 1px color-mix(in srgb, var(--tag-color-milestone) 20%, transparent);
-    color: var(--tag-color-milestone);
-    order: -1;
-  }
+		--tag-bg-alpha: 14%;
+		--tag-border-alpha: 30%;
+	}
 }
 
-@media (prefers-color-scheme: light) {
-  .discourse-tag[data-tag-name="status:confirmed"] {
-    background: color-mix(in srgb, var(--tag-color-danger) 20%, transparent);
-    border: solid 1px color-mix(in srgb, var(--tag-color-danger) 20%, transparent);
-    color: var(--tag-color-danger);
-    order: -1;
-  }
+.discourse-tag[data-tag-name="confirmed"] {
+	--tag-color: var(--tag-color-danger);
+	order: -2;
+}
 
-  .discourse-tag[data-tag-name="status:fixed"],
-  .discourse-tag[data-tag-name="status:implemented"] {
-    background: color-mix(in srgb, var(--tag-color-success) 20%, transparent);
-    border: solid 1px color-mix(in srgb, var(--tag-color-success) 20%, transparent);
-    color: color-mix(in srgb, var(--tag-color-success) 50%, black);
-    order: -1;
-  }
+.discourse-tag[data-tag-name="fixed"],
+.discourse-tag[data-tag-name="implemented"] {
+	--tag-color: var(--tag-color-success);
+	order: -2;
+}
 
-  .discourse-tag[data-tag-name="status:needs_testing"] {
-    background: color-mix(in srgb, var(--tag-color-warning) 20%, transparent);
-    border: solid 1px color-mix(in srgb, var(--tag-color-warning) 20%, transparent);
-    color: color-mix(in srgb, var(--tag-color-warning) 50%, black);
-    order: -1;
-  }
+.discourse-tag[data-tag-name="wip"],
+.discourse-tag[data-tag-name="needs-testing"] {
+	--tag-color: var(--tag-color-warning);
+	order: -2;
+}
 
-  .discourse-tag[data-tag-name*="milestone:"] {
-    background: color-mix(in srgb, var(--tag-color-milestone) 20%, transparent);
-    border: solid 1px color-mix(in srgb, var(--tag-color-milestone) 20%, transparent);
-    color: color-mix(in srgb, var(--tag-color-milestone) 50%, black);
-    order: -1;
-  }
+.discourse-tag.milestone {
+	--tag-color: var(--tag-color-milestone);
+	order: -1;
+}
+
+.discourse-tag[data-tag-name="wip"],
+.discourse-tag[data-tag-name="confirmed"],
+.discourse-tag[data-tag-name="fixed"],
+.discourse-tag[data-tag-name="implemented"],
+.discourse-tag[data-tag-name="needs-testing"],
+.discourse-tag.milestone {
+	background: oklch(from var(--tag-color) l c h / var(--tag-bg-alpha));
+	color: var(--tag-color);
+	font-weight: bold;
+	letter-spacing: -0.025em;
+}
+
+.discourse-tag.box {
+	border-radius: var(--d-border-radius);
+}
+
+.topic-list .discourse-tags {
+	display: none;
+}
+
+.inline-topic-tags {
+	display: inline-flex;
+	gap: 4px;
+	margin-left: 0px;
+	font-size: var(--font-down-1);
+}
+
+.inline-topic-tags .discourse-tag {
+	font-size: 0.85em;
+	padding: 2px 6px;
+}
+
+@media (max-width: 39.999rem) {
+	.topic-list .discourse-tags {
+		display: none !important;
+	}
+}
+
+.inline-topic-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	align-items: center;
+}
+
+.inline-topic-title-link {
+	order: -999;
+}
+
+a.title.raw-link.raw-topic-link:not(.inline-topic-title-link) {
+	display: none !important;
 }
