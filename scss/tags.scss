@@ -22,24 +22,28 @@
 
 .discourse-tag[data-tag-name="confirmed"] {
 	--tag-color: var(--tag-color-danger);
-	order: -2;
 }
 
 .discourse-tag[data-tag-name="fixed"],
 .discourse-tag[data-tag-name="implemented"] {
 	--tag-color: var(--tag-color-success);
-	order: -2;
 }
 
 .discourse-tag[data-tag-name="wip"],
 .discourse-tag[data-tag-name="needs-testing"] {
 	--tag-color: var(--tag-color-warning);
-	order: -2;
 }
 
 .discourse-tag.milestone {
 	--tag-color: var(--tag-color-milestone);
-	order: -1;
+}
+
+.discourse-tag[data-tag-name="wip"],
+.discourse-tag[data-tag-name="needs-testing"],
+.discourse-tag[data-tag-name="fixed"],
+.discourse-tag[data-tag-name="implemented"],
+.discourse-tag[data-tag-name="confirmed"] {
+  order: -2;
 }
 
 .discourse-tag[data-tag-name="wip"],
@@ -88,7 +92,7 @@
 }
 
 .inline-topic-title-link {
-	order: -999;
+	order: -1;
   font-size: var(--font-up-1);
 }
 
