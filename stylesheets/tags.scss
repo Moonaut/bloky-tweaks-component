@@ -1,0 +1,87 @@
+/*
+.topic-list .discourse-tag[data-tag-name="status:confirmed"] {
+  background: var(--tag-color-danger);
+  font-size: 0;
+  width: 8px;
+  height: 8px;
+  min-width: 12px;
+  min-height: 12px;
+  aspect-ratio: 1;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  display: block;
+}
+
+.topic-list .discourse-tag {
+  display: none;
+}
+
+.topic-list .discourse-tag.simple {
+  display: block;
+}
+*/
+
+@media (prefers-color-scheme: dark) {
+  .discourse-tag[data-tag-name="status:confirmed"] {
+    background: color-mix(in srgb, var(--tag-color-danger) 20%, transparent);
+    border: solid 1px color-mix(in srgb, var(--tag-color-danger) 50%, transparent);
+    color: color-mix(in srgb, var(--tag-color-danger) 85%, white);
+    order: -1;
+  }
+
+  .discourse-tag[data-tag-name="status:fixed"],
+  .discourse-tag[data-tag-name="status:implemented"] {
+    background: color-mix(in srgb, var(--tag-color-success) 20%, transparent);
+    border: solid 1px color-mix(in srgb, var(--tag-color-success) 50%, transparent);
+    color: var(--tag-color-success);
+    order: -1;
+  }
+
+  .discourse-tag[data-tag-name="status:needs_testing"] {
+    background: color-mix(in srgb, var(--tag-color-warning) 20%, transparent);
+    border: solid 1px color-mix(in srgb, var(--tag-color-warning) 50%, transparent);
+    color: var(--tag-color-warning);
+    order: -1;
+  }
+
+  .discourse-tag[data-tag-name*="milestone:"] {
+    background: color-mix(in srgb, var(--tag-color-milestone) 20%, transparent);
+    border: solid 1px color-mix(in srgb, var(--tag-color-milestone) 20%, transparent);
+    color: var(--tag-color-milestone);
+    order: -1;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .discourse-tag[data-tag-name="status:confirmed"] {
+    background: color-mix(in srgb, var(--tag-color-danger) 20%, transparent);
+    border: solid 1px color-mix(in srgb, var(--tag-color-danger) 20%, transparent);
+    color: var(--tag-color-danger);
+    order: -1;
+  }
+
+  .discourse-tag[data-tag-name="status:fixed"],
+  .discourse-tag[data-tag-name="status:implemented"] {
+    background: color-mix(in srgb, var(--tag-color-success) 20%, transparent);
+    border: solid 1px color-mix(in srgb, var(--tag-color-success) 20%, transparent);
+    color: color-mix(in srgb, var(--tag-color-success) 50%, black);
+    order: -1;
+  }
+
+  .discourse-tag[data-tag-name="status:needs_testing"] {
+    background: color-mix(in srgb, var(--tag-color-warning) 20%, transparent);
+    border: solid 1px color-mix(in srgb, var(--tag-color-warning) 20%, transparent);
+    color: color-mix(in srgb, var(--tag-color-warning) 50%, black);
+    order: -1;
+  }
+
+  .discourse-tag[data-tag-name*="milestone:"] {
+    background: color-mix(in srgb, var(--tag-color-milestone) 20%, transparent);
+    border: solid 1px color-mix(in srgb, var(--tag-color-milestone) 20%, transparent);
+    color: color-mix(in srgb, var(--tag-color-milestone) 50%, black);
+    order: -1;
+  }
+}

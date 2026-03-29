@@ -1,0 +1,29 @@
+tbody {
+  border: none;
+}
+
+.category-list tbody .category {
+  border-left: 0;
+}
+
+.category-list tbody .topics {
+  border-left: 0;
+  visibility: hidden;
+}
+
+.category-list tbody tr {
+  border-bottom: 0 solid transparent !important;
+}
+
+.category-list thead {
+  display: none;
+}
+
+.categories-and-latest .table-heading {
+  border-bottom: 0 solid transparent;
+  text-align: center;
+}
+
+.categories-list .category .category-logo.aspect-image {
+  display: none;
+}

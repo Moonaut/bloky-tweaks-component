@@ -1,0 +1,33 @@
+button#create-topic {
+  color: var(--secondary);
+  border: 0 solid transparent;
+  background: var(--tertiary);
+  transition: background 0.25s ease-out;
+
+  .d-icon {
+    color: var(--secondary);
+  }
+
+  &:hover,
+  &:focus {
+    background: var(--tertiary);
+    color: var(--secondary);
+
+    .d-icon {
+      color: var(--secondary);
+    }
+  }
+}
+
+.vote-count-wrapper {
+  border-radius: var(--d-border-radius);
+}
+
+.vote-button {
+  padding: 8px 16px;
+}
+
+.vote-button .d-button-label {
+  display: inline-flex;
+  align-items: center;
+}

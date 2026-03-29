@@ -1,0 +1,30 @@
+.discourse-tag.box {
+  border-radius: 999rem;
+}
+
+.topic-card {
+  box-shadow: none !important;
+  background: var(--primary-50);
+}
+
+.topic-card__thumbnail .main-thumbnail {
+  border-radius: 1rem;
+  aspect-ratio: 1;
+}
+
+.topic-card__excerpt {
+  font-size: var(--font-down-1);
+  line-height: var(--line-height-large);
+}
+
+.topic-card__excerpt-text {
+  color: var(--primary-low-mid);
+  font-size: var(--font-0) !important;
+  line-height: var(--line-height-large) !important;
+  max-height: 3.8em !important;
+}
+
+.list-controls .combo-box .combo-box-header {
+  border: none;
+  background: var(--primary-low);
+}

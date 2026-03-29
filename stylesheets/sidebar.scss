@@ -1,0 +1,15 @@
+.sidebar-section-link-wrapper .sidebar-section-link-prefix .prefix-span {
+  border-radius: 0.2rem;
+}
+
+.sidebar-section-link-wrapper .sidebar-section-link {
+  border-radius: var(--d-button-border-radius);
+}
+
+.sidebar-section-wrapper.sidebar-section[data-section-name="tags"] {
+  display: none;
+}
+
+.sidebar-section-wrapper.sidebar-section[data-section-name="categories"] {
+  border-bottom: none;
+}
