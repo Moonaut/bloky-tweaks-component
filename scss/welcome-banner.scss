@@ -1,14 +1,14 @@
 .welcome-banner__title {
-    font-size: var(--font-up-6);
-    font-weight: 900;
-    letter-spacing: -0.025em;
+    font-size: var(--font-up-6) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.025em !important;
 
-    display: inline-block;
-    background: linear-gradient(in oklch to right, oklch(70.5% 0.213 47.604), oklch(62.7% 0.265 303.9));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    display: inline-block !important;
+    background: linear-gradient(in oklch to right, oklch(70.5% 0.213 47.604), oklch(62.7% 0.265 303.9)) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
 }
 
 .search-input--welcome-banner {
@@ -16,6 +16,6 @@
     background: var(--primary-low);
 }
 
-welcome-banner__wrap {
+.welcome-banner__wrap {
     text-align: center;
 }
