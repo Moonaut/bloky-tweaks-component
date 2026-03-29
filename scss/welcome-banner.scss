@@ -12,8 +12,8 @@
 }
 
 .search-input--welcome-banner {
-    border: none;
-    background: var(--primary-low);
+    border: none !important;
+    background: var(--primary-low) !important;
 }
 
 .welcome-banner__wrap {
