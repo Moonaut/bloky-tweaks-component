@@ -3,7 +3,7 @@
 }
 
 .nav-pills>li>a:hover::after {
-    content: none;
+    content: none !important;
 }
 
 .nav-pills {
