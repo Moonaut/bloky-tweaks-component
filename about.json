@@ -1,6 +1,6 @@
 {
   "name": "Bloky",
-  "component": false,
+  "component": true,
   "authors": "Inknight",
   "about_url": null,
   "license_url": null,
