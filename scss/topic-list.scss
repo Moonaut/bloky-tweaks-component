@@ -41,7 +41,7 @@ tbody tr {
 
 .topic-list .link-bottom-line {
   gap: 0;
-  display: none;
+  display: none !important;
 }
 
 .topic-list-item,
