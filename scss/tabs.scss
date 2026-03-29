@@ -2,7 +2,7 @@
     content: none;
 }
 
-.nav-pills>li a.active::after:hover, .nav-pills>li button.active::after {
+.nav-pills>li>a:hover::after {
     content: none;
 }
 
