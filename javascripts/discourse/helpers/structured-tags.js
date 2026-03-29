@@ -35,16 +35,20 @@ export default helper(function structuredTags([tags]) {
   if (!tags?.length) return null;
 
   let priorityList = settings.priority_tags || [];
-  
+
   if (typeof priorityList === "string") {
     priorityList = priorityList.split("|").map(t => t.trim());
   }
 
   function tagSortKey(name) {
-    if (!name) return priorityList.length + 1;
+    if (!name) return priorityList.length + 2;
 
     const exactIndex = priorityList.indexOf(name);
-    return exactIndex !== -1 ? exactIndex : priorityList.length;
+    if (exactIndex !== -1) return exactIndex;
+
+    if (isVersionTag(name)) return priorityList.length;
+
+    return priorityList.length + 1;
   }
 
   const sorted = [...tags].sort((a, b) => {
