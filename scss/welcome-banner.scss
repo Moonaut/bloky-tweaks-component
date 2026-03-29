@@ -1,0 +1,21 @@
+.welcome-banner__title {
+    font-size: var(--font-up-6);
+    font-weight: 900;
+    letter-spacing: -0.025em;
+
+    display: inline-block;
+    background: linear-gradient(in oklch to right, oklch(70.5% 0.213 47.604), oklch(62.7% 0.265 303.9));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.search-input--welcome-banner {
+    border: none;
+    background: var(--primary-low);
+}
+
+welcome-banner__wrap {
+    text-align: center;
+}
