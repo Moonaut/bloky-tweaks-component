@@ -7,12 +7,13 @@
 }
 
 .nav-pills {
-    background: var(--primary-100);
+    background: var(--primary-50);
     border-radius: var(--d-border-radius-large);
     padding: 4px;
 }
 
 .nav-pills>li {
+    background: var(--primary-100);
     border-radius: calc(var(--d-border-radius-large) - 4px);
 }
 
