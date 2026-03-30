@@ -19,3 +19,8 @@
 .welcome-banner__wrap {
     text-align: center;
 }
+
+.welcome-banner.--location-below-site-header {
+    border-radius: 0;
+    border-bottom: 1px solid var(--content-border-color);
+}
