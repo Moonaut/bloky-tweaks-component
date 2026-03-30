@@ -1,5 +1,5 @@
 <span class="inline-topic-tags">
-	<a
+	
 		href="/t/{{topic.slug}}/{{topic.id}}/1"
 		data-topic-id="{{topic.id}}"
 		class="title raw-link raw-topic-link inline-topic-title-link"
@@ -8,38 +8,14 @@
 	</a>
 
 	{{#if topic.tags}}
-		{{#let (structured-tags topic.tags) as |s|}}
-			{{#each s.visible as |tag|}}
-				<a
-					href="/tag/{{tag.name}}"
-					class="discourse-tag box {{tag.className}}"
-					data-tag-name="{{tag.name}}"
-				>
-					{{tag-display-name tag.name}}
-				</a>
-			{{/each}}
-
-			{{#if s.hidden.length}}
-				<span
-					class="discourse-tag box extra-tags-toggle"
-					role="button"
-					{{on "click" (fn this.toggleHidden)}}
-				>
-					+{{s.hidden.length}}
-				</span>
-
-				<span class="extra-tags" hidden>
-					{{#each s.hidden as |tag|}}
-						<a
-							href="/tag/{{tag.name}}"
-							class="discourse-tag box {{tag.className}}"
-							data-tag-name="{{tag.name}}"
-						>
-							{{tag-display-name tag.name}}
-						</a>
-					{{/each}}
-				</span>
-			{{/if}}
-		{{/let}}
+		{{#each (structured-tags topic.tags) as |tag|}}
+			
+				href="/tag/{{tag.name}}"
+				class="discourse-tag box {{tag.className}}"
+				data-tag-name="{{tag.name}}"
+			>
+				{{tag-display-name tag.name}}
+			</a>
+		{{/each}}
 	{{/if}}
 </span>
